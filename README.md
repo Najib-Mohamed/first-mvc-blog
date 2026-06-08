@@ -9,7 +9,7 @@ https://dev.mysql.com/downloads/workbench/
 
 ## Principes de la structure MVC
 
-![Schéma MVC](data\MVC.png)
+![Schéma MVC](data/MVC.png)
 
 - **Modèle (Model)** : C'est la partie qui gère les données et la logique métier de l'application. Il interagit avec la base de données pour récupérer, insérer, mettre à jour ou supprimer des données. Le modèle ne contient aucune logique de présentation.
 - **Vue (View)** : C'est la partie qui gère la présentation des données. Elle est responsable de l'affichage des informations à l'utilisateur. La vue reçoit les données du modèle et les affiche de manière appropriée, souvent en utilisant du HTML, CSS et parfois du JavaScript.
@@ -17,7 +17,7 @@ https://dev.mysql.com/downloads/workbench/
 
 ## Les jointures SQL
 
-![Schéma MVC](data\sql-joins.jpg)
+![Schéma MVC](data/sql-joins.jpg)
 
 Les jointures SQL permettent de combiner des données provenant de plusieurs tables en fonction d'une condition de correspondance. Il existe plusieurs types de jointures, notamment :
 
