@@ -84,12 +84,34 @@ SELECT
 	WHERE a.`id` = 2
 ;    
 
-# Affichez les champs `id`, `title`, `date` et `contenu`  de la table `article`, ainsi que l' `id` renommé `iduser` (alias de sortie) et le `username` venant de la table `user` lorsque l' id de l'article vaut 1
+# Affichez les champs `id`, `title`, `date` et `contenu`  de la table `article`, ainsi que l' `id` renommé `iduser` (alias de sortie) et le `username` venant de la table `user`, ET prendre l'`id` et le `title` de la table `category` SI ils existent pour l'article (Jointure où l'article est toujours affiché -> jointure externe de type LEFT)  -- lorsque l' id de l'article vaut 1
 SELECT 
 	a.`id`, a.`title`,a.`date`, a.`content`,
-    u.`id` AS `iduser`, u.`username`
+    u.`id` AS `iduser`, u.`username`,
+    c.`id`, c.`title`
 	FROM `article` a
     INNER JOIN `user` u
 		ON u.`id` = a.`user_id`
-	WHERE a.`id` = 1
+    LEFT JOIN `category_has_article` h
+		ON a.`id` = h.`article_id`
+    LEFT JOIN  `category` c 
+		ON c.`id` = h.`category_id`
+	-- WHERE a.`id` = 1
+; 
+
+
+# Affichez les champs `id`, `title`, `date` et `contenu`  de la table `article`, ainsi que l' `id` renommé `iduser` (alias de sortie) et le `username` venant de la table `user`, ET prendre l'`id` et le `title` de la table `category` SI ils existent pour l'article   -- lorsque l' id de l'article vaut 1
+SELECT 
+	a.`id`, a.`title`,a.`date`, a.`content`,
+    u.`id` AS `iduser`, u.`username`,
+    c.`id`, c.`title`
+	FROM `article` a
+    INNER JOIN `user` u
+		ON u.`id` = a.`user_id`
+    LEFT JOIN `category_has_article` h
+		ON a.`id` = h.`article_id`
+    LEFT JOIN  `category` c 
+		ON c.`id` = h.`category_id`
+	-- WHERE a.`id` = 1
+    GROUP BY a.`id` -- permet de n'avoir qu'un article mais on a une perte d'information
 ; 
