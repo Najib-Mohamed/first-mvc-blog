@@ -27,12 +27,12 @@ try{
  */
 
 // On charge les catégories pour les pages publiques
-$menu = selectAllCategoryMenu($dbConnect);
+$menu = selectAllCategoryMenu($dbConnect); // model
 
 /**
  * homepage
  */
-include_once BASE_URL."/view/homepage.view.html.php";
+include_once BASE_URL."/view/homepage.view.html.php"; // view
 
 //var_dump($dbConnect);
 $dbConnect = null;
