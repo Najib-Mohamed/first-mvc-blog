@@ -1,5 +1,6 @@
 # first-mvc-blog
 
+## Classe 2
 
 En PHP Procédural, structure MVC et base de donnée MySQL
 
@@ -33,7 +34,7 @@ Voici les types de jointures les plus courants :
 
 ## Les tables
 
-![Schéma DB](formateur/firstmichael.png)
+![Schéma DB](formateur/data/first.svg)
 
 
 ### user
