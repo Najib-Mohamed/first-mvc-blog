@@ -34,7 +34,7 @@ Voici les types de jointures les plus courants :
 
 ## Les tables
 
-![Schéma DB](formateur/first.svg)
+![Schéma DB](formateur/data/first.svg)
 
 
 ### user
